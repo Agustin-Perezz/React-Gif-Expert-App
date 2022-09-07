@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import {AddCategory} from './components/AddCategory'
 import {GridItems} from './components/GridItems'
+import { CustomTitle } from './components/ui/CustomTitle'
 
 const GifExpertApp = () => {
 	const [categorias, setCategorias] = useState(['One Punch'])
 
 	return (
 		<>
-			<h2>GifExpertApp</h2>	
-			<hr />
-			<AddCategory setCategorias= { setCategorias } />
+			<div className='header'>
+				<CustomTitle />
+				<AddCategory setCategorias= { setCategorias } />
+			</div>	
+			<hr className='separator-line'/>
 		
 			<ol>
 				{
