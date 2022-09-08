@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { PropTypes } from "prop-types";
 
+import searchIcon from '../assets/images/search.png';
+
 export const AddCategory = ( { setCategorias } ) => {
 
 	const [inputValue, setInputValue] = useState('');
@@ -20,11 +22,16 @@ export const AddCategory = ( { setCategorias } ) => {
 
 	return (
 		<form className='form' onSubmit={ handleSubmit }>
+			<div className='container-icon' onClick={ handleSubmit }>
+				<img src={ searchIcon } alt='search' className='icon'/>
+			</div>
 			<input 
 				value={inputValue}
 				type="text" 
 				onChange={ handleEventChange }
 				className='input'
+				placeholder='Search any gif...'
+				autoFocus='true'
 			/>
 		</form>
 	)
